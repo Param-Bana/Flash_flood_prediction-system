@@ -1,0 +1,60 @@
+{
+  "task": "Prototype severe-flood classification using INDOFLOODS",
+  "important_label_note": "The target is INDOFLOODS 'Severe Flood', not a direct flash-flood label. It is used only as a prototype proxy for higher flood severity.",
+  "rows_total": 4548,
+  "rows_train": 3760,
+  "rows_test": 788,
+  "gauges_total": 155,
+  "gauges_train": 124,
+  "gauges_test": 31,
+  "class_distribution_total": {
+    "Flood": 2919,
+    "Severe Flood": 1629
+  },
+  "class_distribution_test": {
+    "Flood": 511,
+    "Severe Flood": 277
+  },
+  "accuracy": 0.6687817258883249,
+  "precision_severe_flood": 0.531496062992126,
+  "recall_severe_flood": 0.48736462093862815,
+  "f1_severe_flood": 0.5084745762711864,
+  "roc_auc": 0.6576543480257441,
+  "pr_auc": 0.5258711707190311,
+  "confusion_matrix": [
+    [
+      392,
+      119
+    ],
+    [
+      142,
+      135
+    ]
+  ],
+  "features": [
+    "T1d",
+    "T2d",
+    "T3d",
+    "T4d",
+    "T5d",
+    "T6d",
+    "T7d",
+    "T8d",
+    "T9d",
+    "T10d",
+    "Stream Order",
+    "Drainage Area",
+    "Catchment Relief",
+    "Catchment Length",
+    "Drainage Density",
+    "Ruggedness Number",
+    "Annual Precipitation"
+  ],
+  "split_method": "GroupShuffleSplit by GaugeID, test_size=0.20, random_state=42",
+  "random_forest": {
+    "n_estimators": 500,
+    "min_samples_leaf": 2,
+    "class_weight": "balanced",
+    "random_state": 42
+  }
+}
